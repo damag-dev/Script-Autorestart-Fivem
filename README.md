@@ -2,12 +2,12 @@
 The script allows you to auto-restart the script in fivem :)
 Enjoy :)
 
----------------------------------------------------------------------------------------------------------------
 
+```lua
 ---here you have template how next autorestarts should look like.
-local app = "Name of your srcipt" --- add to app next number like  [app1,app2,app3] and change the name bellow
+local app = "Name of your srcipt" --- add to app next number like  [app1,app2,app3] and change the name bellow 
 
-Citizen.CreateThread(function()
+Citizen.CreateThread(function() 
   while true do 
     Citizen.Wait(1)
     PerformHttpRequest(weabhooklink, function(err, text, headers) end, 'POST', json.encode({username = ReplyUserName, content = "ALLERT autorestart in 10 sec", avatar_url = AvatarURL}), { ['Content-Type'] = 'application/json' }) 
@@ -19,6 +19,6 @@ Citizen.CreateThread(function()
      Citizen.Wait(1800000) --- wiat 30 min
   end
 end)
+```
 
----------------------------------------------------------------------------------------------------------------
 Made by damag #4013
